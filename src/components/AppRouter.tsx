@@ -6,9 +6,7 @@ import { CHAT_ROUTE, LOGIN_ROUTE } from '../routes/constant'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Context } from '../Firebase'
 
-interface AppRouterProps {}
-
-const AppRouter = ({}: AppRouterProps): JSX.Element => {
+const AppRouter = (): JSX.Element => {
     const { auth } = useContext(Context)
     const [user] = useAuthState(auth)
     return user ? (

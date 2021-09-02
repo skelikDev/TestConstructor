@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { Box, Button, Container, Grid } from '@material-ui/core'
 import { Context } from '../Firebase'
-import firebase from 'firebase/compat'
 
 const Login = (): JSX.Element => {
     const { auth, signInWithPopup, GoogleAuthProvider } = useContext(Context)

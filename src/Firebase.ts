@@ -1,6 +1,14 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
-import { getFirestore } from 'firebase/firestore'
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    doc,
+    where,
+    query,
+    getDocs,
+} from 'firebase/firestore'
 import { createContext } from 'react'
 
 const firebaseConfig = {
@@ -14,12 +22,18 @@ const firebaseConfig = {
 }
 initializeApp(firebaseConfig)
 const auth = getAuth()
-const firestore = getFirestore()
+const db = getFirestore()
 
 export const context = {
     auth,
     signInWithPopup,
     GoogleAuthProvider,
-    firestore,
+    db,
+    doc,
+    query,
+    where,
+    addDoc,
+    getDocs,
+    collection,
 }
 export const Context = createContext(context)
