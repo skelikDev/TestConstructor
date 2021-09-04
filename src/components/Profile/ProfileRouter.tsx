@@ -6,7 +6,11 @@ import { profileRoutes } from '../../routes/routes'
 export const ProfileRouter = () => {
     const match = useRouteMatch()
     const routes = profileRoutes.map((el) => (
-        <Route path={`${PROFILE_ROUTE}${el.path}`} component={el.Component} />
+        <Route
+            key={el.path}
+            path={`${PROFILE_ROUTE}${el.path}`}
+            component={el.Component}
+        />
     ))
     return <Switch>{routes}</Switch>
 }

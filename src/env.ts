@@ -1,8 +1,8 @@
 const show = true
-const offComponents = ['App', 'Loader']
+const offComponents = ['Loader']
 
 export const debug = {
-    i(item: {} | {}[], component: string, desc = '') {
+    i(item: {} | null | {}[], component: string, desc = '') {
         if (show && toggleEnv(component)) {
             console.groupCollapsed('%c%s', infoStyle, `${component} ${desc}`)
             eachParamLog(item)
@@ -30,7 +30,7 @@ export const debug = {
     },
 }
 
-function eachParamLog(item: {} | {}[]) {
+function eachParamLog(item: {} | null | {}[]) {
     if (Array.isArray(item)) {
         item.forEach((el) => console.info(el))
     } else {

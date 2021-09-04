@@ -15,7 +15,7 @@ export const TestsBlock = (): JSX.Element => {
     const match = useRouteMatch()
     return (
         <Box width={200}>
-            <ul>
+            <Box>
                 <Link to={`${match.path}${MY_TESTS_ROUTE}`}>
                     <Button>Мои тесты</Button>
                 </Link>
@@ -25,7 +25,7 @@ export const TestsBlock = (): JSX.Element => {
                 <Link to={`${match.path}${COMPLETED_TESTS_ROUTE}`}>
                     <Button>Завершенные тесты</Button>
                 </Link>
-            </ul>
+            </Box>
         </Box>
     )
 }
