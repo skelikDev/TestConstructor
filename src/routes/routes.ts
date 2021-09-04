@@ -1,7 +1,7 @@
 import { LOGIN_ROUTE, MY_TESTS_ROUTE, PROFILE_ROUTE } from './constant'
 import Login from '../components/Login/Login'
 import { Profile } from '../components/Profile/Profile'
-import { TestsList } from '../components/TestsPage/TestsList'
+import { MyTests } from '../components/Profile/TestsBlock/TestsPage/MyTests'
 
 export const publicRoutes = [
     {
@@ -14,8 +14,10 @@ export const privateRoutes = [
         path: PROFILE_ROUTE,
         Component: Profile,
     },
+]
+export const profileRoutes = [
     {
         path: MY_TESTS_ROUTE,
-        Component: TestsList,
+        Component: MyTests,
     },
 ]

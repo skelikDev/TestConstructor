@@ -1,3 +1,5 @@
 export const LOGIN_ROUTE = '/login'
 export const PROFILE_ROUTE = '/profile'
 export const MY_TESTS_ROUTE = '/my_tests'
+export const All_TESTS_ROUTE = '/all_tests'
+export const COMPLETED_TESTS_ROUTE = '/completed_tests'
