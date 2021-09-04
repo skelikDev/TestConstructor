@@ -2,10 +2,10 @@ import React from 'react'
 import { Backdrop, CircularProgress, Container, Grid } from '@material-ui/core'
 import { firebaseOctopus } from '../FirebaseOctopus'
 import { observer } from 'mobx-react'
-import { log } from '../env'
+import { debug } from '../env'
 
 const Loader = observer((): JSX.Element | null => {
-    log('render', 'Loader')
+    debug.i('render', 'Loader')
     if (firebaseOctopus.loading) {
         return (
             <Container>

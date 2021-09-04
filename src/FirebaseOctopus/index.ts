@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx'
 import { initializeApp } from 'firebase/app'
 import { getAuth, User } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
-import { log } from '../env'
+import { debug } from '../env'
 
 const firebaseConfig = {
     apiKey: 'AIzaSyBXr2Qt5J-z3UC7_CteAEipuMCkFZfab_g',
@@ -25,7 +25,7 @@ class FirebaseOctopus {
     }
     setUser(user: User | null) {
         this.user = user
-        log(this.user, 'firebaseOctopus', 'USER')
+        debug.i(this.user, 'firebaseOctopus', 'USER')
     }
     setLoading(isLoading: boolean) {
         this.loading = isLoading
