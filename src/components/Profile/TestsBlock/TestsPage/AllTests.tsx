@@ -7,7 +7,7 @@ import { ActionCell } from './ActionCell'
 //   children: React.ReactNode
 // }
 
-export const MyTests = (): JSX.Element => {
+export const AllTests = (): JSX.Element => {
     const headerCell = [
         'Название Теста',
         'Дата создания',

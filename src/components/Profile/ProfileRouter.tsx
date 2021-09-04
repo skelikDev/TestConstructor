@@ -1,16 +1,12 @@
 import React from 'react'
 import { Route, Switch, useRouteMatch } from 'react-router-dom'
-import { MY_TESTS_ROUTE } from '../../routes/constant'
-import { MyTests } from './TestsBlock/TestsPage/MyTests'
+import { PROFILE_ROUTE } from '../../routes/constant'
+import { profileRoutes } from '../../routes/routes'
 
 export const ProfileRouter = () => {
     const match = useRouteMatch()
-    return (
-        <Switch>
-            <Route
-                path={`${match.path}${MY_TESTS_ROUTE}`}
-                component={MyTests}
-            />
-        </Switch>
-    )
+    const routes = profileRoutes.map((el) => (
+        <Route path={`${PROFILE_ROUTE}${el.path}`} component={el.Component} />
+    ))
+    return <Switch>{routes}</Switch>
 }
