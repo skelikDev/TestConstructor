@@ -1,16 +1,18 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Box, Button, Container, Grid } from '@material-ui/core'
-import { Context } from '../Firebase'
+import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import { firebaseOctopus } from '../../FirebaseOctopus'
 
 const Login = (): JSX.Element => {
-    const { auth, signInWithPopup, GoogleAuthProvider } = useContext(Context)
     const login = async () => {
+        await firebaseOctopus.setLoading(true)
         const provider = new GoogleAuthProvider()
-        const user = await signInWithPopup(auth, provider).then(
+        const user = await signInWithPopup(firebaseOctopus.auth, provider).then(
             (result) => result.user
         )
-        console.log(user)
+        await firebaseOctopus.setLoading(false)
     }
+
     return (
         <Container>
             <Grid
