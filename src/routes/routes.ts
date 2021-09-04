@@ -1,17 +1,17 @@
-import {CHAT_ROUTE, LOGIN_ROUTE} from "./constant";
-import {Component} from "react";
-import Login from "../components/Login";
-import Chat from "../components/Chat";
+import { LOGIN_ROUTE, PROFILE_ROUTE } from './constant'
+import Login from '../components/Login/Login'
+import { Profile } from '../components/Profile/Profile'
 
-export const publicRoutes =[
+export const publicRoutes = [
     {
-        path:LOGIN_ROUTE,
-        Component: Login
-    }
+        path: LOGIN_ROUTE,
+        Component: Login,
+    },
 ]
 export const privateRoutes = [
     {
-        path:CHAT_ROUTE,
-        Component: Chat
-    }
+        path: PROFILE_ROUTE,
+        Component: Profile,
+        //    todo поменять компонент на целевой
+    },
 ]

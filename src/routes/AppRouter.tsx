@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
-import { privateRoutes, publicRoutes } from '../routes/routes'
+import { privateRoutes, publicRoutes } from './routes'
 
-import { CHAT_ROUTE, LOGIN_ROUTE } from '../routes/constant'
+import { PROFILE_ROUTE, LOGIN_ROUTE } from './constant'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { Context } from '../Firebase'
+import { firebaseOctopus } from '../FirebaseOctopus'
 
 const AppRouter = (): JSX.Element => {
-    const { auth } = useContext(Context)
+    const { auth } = firebaseOctopus
     const [user] = useAuthState(auth)
     return user ? (
         <Switch>
@@ -16,7 +16,7 @@ const AppRouter = (): JSX.Element => {
                     <Route key={path} exact path={path} component={Component} />
                 )
             })}
-            <Redirect to={CHAT_ROUTE} />
+            <Redirect to={PROFILE_ROUTE} />
         </Switch>
     ) : (
         <Switch>
