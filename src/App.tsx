@@ -10,9 +10,7 @@ import Loader from './components/Loader'
 import { debug } from './env'
 
 const App = (): JSX.Element => {
-    debug.i('saaa', 'App')
-    debug.i(['saaa', 'dwadawd', 'wadwadas'], 'App')
-    debug.i('saaa', 'App')
+    debug.w('Render', 'App', 'render')
     const [user, loading, error] = useAuthState(firebaseOctopus.auth)
     //todo подумать как избавиться от хуков
     useEffect(() => {

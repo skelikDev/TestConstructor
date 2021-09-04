@@ -1,43 +1,45 @@
 export interface IUser {
-    id: number
+    id: string | number
     email: string
     password: string
+    photoUrl: string
+    name: string
 }
 
 export interface ITest {
-    id: number
+    id: string | number
     title: string
-    authorId: number
+    authorId: string | number
     creationData: string
 }
 
 export interface IQuestion {
-    id: number
+    id: string | number
     description: string
     type: TTypeQuestion
     order: number
-    TestID: number
+    TestID: string | number
 }
 
 export interface IAnswer {
-    id: number
+    id: string | number
     value: string
     correct: boolean
     questionId: number
 }
 
 export interface ICompletedTest {
-    id: number
-    userId: number
-    testId: number
+    id: string | number
+    userId: string | number
+    testId: string | number
     right: number
     wrong: number
 }
 
 export interface IUsersAnswers {
-    id: number
-    userId: number
-    answerId: number
+    id: string | number
+    userId: string | number
+    answerId: string | number
     value: string
 }
 

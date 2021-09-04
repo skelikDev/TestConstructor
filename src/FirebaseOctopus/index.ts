@@ -20,13 +20,16 @@ class FirebaseOctopus {
     auth = getAuth(this.app)
     db = getFirestore(this.app)
     user: User | null = null
+
     constructor() {
         makeAutoObservable(this)
     }
+
     setUser(user: User | null) {
         this.user = user
         debug.i(this.user, 'firebaseOctopus', 'USER')
     }
+
     setLoading(isLoading: boolean) {
         this.loading = isLoading
     }
