@@ -3,6 +3,7 @@ export interface IUser {
     email: string
     password: string
 }
+
 export interface ITest {
     id: number
     title: string
@@ -39,4 +40,9 @@ export interface IUsersAnswers {
     answerId: number
     value: string
 }
+
 type TTypeQuestion = 'radio' | 'check' | 'string'
+//TODO Определить более точный тип для TTableRowData.action
+export type TTableRowData = [
+    { name: string; data: string; param: string; action: any }
+]
