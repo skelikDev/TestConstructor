@@ -15,9 +15,9 @@ export const ProfileBlock = observer((): JSX.Element | null => {
     const photoUrl = user.photoURL ? user.photoURL : fillerImg
     const name = user.displayName
     return (
-        <div>
+        <Box width={200} height={200} bgcolor={'green'}>
             <img src={photoUrl} />
             <Box>{name}</Box>
-        </div>
+        </Box>
     )
 })
